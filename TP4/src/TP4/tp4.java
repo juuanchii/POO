@@ -4,6 +4,8 @@
  */
 package TP4;
 
+import java.util.Iterator;
+
 /**
  *
  * @author juanacuna
@@ -17,6 +19,10 @@ public class tp4 {
         MapaMundial mapa = new MapaMundial();
         
         mapa.inicializar();
+        
+        var europa = mapa.getPaisesDeContinente("Europa", mapa);
+        System.out.print(europa);
+        
     }
     
 }
