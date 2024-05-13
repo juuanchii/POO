@@ -13,7 +13,10 @@ import java.util.Iterator;
  */
 public class MapaMundial {
     private HashSet continentes = new HashSet<Continente>();
-    
+
+    public MapaMundial() {
+    }
+
     public void inicializar(){
         var america = new Continente("America");
         america.agregarPais("Argentina", "Buenos Aires");
@@ -45,23 +48,50 @@ public class MapaMundial {
         uruguay.agregarProvincia("Maldonado");   
     }
     
-    public HashSet getContinentes(String nombre){
-        
+    public HashSet getContinentes(){        
         return continentes;
     }
     
-    public HashSet getPaisesDeContinente(String nombre, Object mapa){
+    public HashSet getPaisesDe(String nombre){
         Iterator<Continente> iterator = continentes.iterator();
 
-        // Iterate over the HashSet using the iterator
+        // Itera en el HashSet de contintentes buscando el que sea igual al parametro nombre
         while (iterator.hasNext()) {
             Continente continente = iterator.next();
-            //System.out.println(continente.getNombre());
+            
             if(continente.getNombre().equals(nombre)){
                 return continente.getPaises();
             }
         }
-        return null;
+        return new HashSet<>();
     }
     
-}
+    public HashSet getProvinciasDe(String nombre, Object mapa){
+        Iterator<Continente> iterator = continentes.iterator();
+        
+        // Itera en el HashSet de contintentes buscando el que sea igual al parametro nombre
+        while (iterator.hasNext()) {
+            Continente continente = iterator.next();
+            
+            var paises = continente.getPaises();
+            
+            Iterator<Pais> it = paises.iterator();
+            
+            while (it.hasNext()) {
+            Pais pais = it.next();
+                if(pais.getNombre().equals(nombre)){
+                    return pais.getProvincias();
+                }
+            }
+    
+        }
+    return new HashSet<>();
+    }
+
+    @Override
+    public String toString() {
+        return "MapaMundial{" + "continentes=" + continentes + '}';
+    }
+    
+    
+}    

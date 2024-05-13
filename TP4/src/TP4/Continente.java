@@ -1,16 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package TP4;
 
 import java.util.HashSet;
 import java.util.Iterator;
 
-/**
- *
- * @author juanacuna
- */
+
 public class Continente {
     private String nombre;
     private HashSet<Pais> paises;
@@ -55,6 +48,20 @@ public class Continente {
        
         return paises.stream().filter(pais -> nombre.
         equals(pais.getNombre())).findAny().orElse(new Pais());
+    }
+    
+    public HashSet getProvinciasDe(String nombre, Object continente){
+        Iterator<Pais> iterator = paises.iterator();
+
+        // Itera en el HashSet de contintentes buscando el que sea igual al parametro nombre
+        while (iterator.hasNext()) {
+            Pais pais = iterator.next();
+            
+            if(pais.getNombre().equals(nombre)){
+                return pais.getProvincias();
+            }
+        }
+        return new HashSet<>();
     }
 
     @Override
