@@ -1,7 +1,5 @@
 package TP4;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -21,7 +19,8 @@ public class MapaMundi {
         while (true) {
             System.out.println("Ingrese 1 para elegir un continente para listar sus paises.");
             System.out.println("Ingrese 2 para elegir un pais para listar sus provincias.");
-            System.out.println("Ingrese 3 para salir");
+            System.out.println("Ingrese 3 para Saber los paises limitrofes de uno en concreto");
+            System.out.println("Ingrese 4 para salir");
             
             int opcion = scanner.nextInt();
             scanner.nextLine();
@@ -76,17 +75,17 @@ public class MapaMundi {
           while (it.hasNext()) {
                 Continente cont = it.next();
                 var pais = cont.getPais(nombrePais);
+                
                 if (pais != null){
                     var limitrofes = pais.getLimitrofes();
                     Iterator<String> iter = limitrofes.iterator();
+                    
                     while (iter.hasNext()) {
                            String p = iter.next();
 
                             System.out.println(p);
                      }
-
                 }
-
           }
     }
     
