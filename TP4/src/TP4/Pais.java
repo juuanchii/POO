@@ -4,7 +4,9 @@
  */
 package TP4;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+
 
 /**
  *
@@ -13,17 +15,20 @@ import java.util.HashSet;
 public class Pais {
     private String nombre, capital;
     private HashSet provincias;
+    private ArrayList limitrofes;
     
     public Pais(){
         this.nombre = "";
         this.capital = "";
         this.provincias = new HashSet<Provincia> ();
+        this.limitrofes = new ArrayList<String> ();
     }
     
     public Pais(String nombre, String capital) {
         this.nombre = nombre;
         this.capital = capital;
         this.provincias = new HashSet<Provincia> ();
+        this.limitrofes = new ArrayList<String> ();
     }
 
     public void setNombre(String nombre) {
@@ -49,6 +54,14 @@ public class Pais {
     
     public HashSet getProvincias() {
         return provincias;
+    }
+    
+    public void agregarPaisLimitrofe(String nombre) {
+        limitrofes.add(nombre);
+    }
+    
+    public ArrayList getLimitrofes() {
+        return limitrofes;
     }
 
     @Override

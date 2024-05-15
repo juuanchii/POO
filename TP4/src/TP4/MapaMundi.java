@@ -1,5 +1,6 @@
 package TP4;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -18,29 +19,35 @@ public class MapaMundi {
         
         
         while (true) {
-            
             System.out.println("Ingrese 1 para elegir un continente para listar sus paises.");
             System.out.println("Ingrese 2 para elegir un pais para listar sus provincias.");
+            System.out.println("Ingrese 3 para salir");
             
             int opcion = scanner.nextInt();
             scanner.nextLine();
             
             if (opcion == 1){
-                System.out.print("Ingrese el nombre de un continente para listar");
+                System.out.println("Ingrese el nombre de un continente para listar");
                     
                 String nombre = scanner.nextLine();
                 mostrarPaises(nombre, mapa);
             }
             
             if (opcion == 2){
-                System.out.print("Ingrese el nombre de un pais para listar"
-                    + "(o 'salir' para terminar): ");
+                System.out.println("Ingrese el nombre de un pais para listar");
                     
                 String nombre = scanner.nextLine();
                 mostrarProvincias(nombre, mapa);
             }
+            
+            if (opcion == 3){
+                System.out.println("Ingrese el nombre de un pais para saber sus paises limitrofes");
+                    
+                String nombre = scanner.nextLine();
+                mostrarPaisesLimitrofes(nombre, mapa);
+            }
 
-            if (opcion == 3) {
+            if (opcion == 4) {
                 System.out.println("Gracias por usar el Mapa Mundial. ¡Hasta luego!");
                 break;
             }
@@ -60,6 +67,27 @@ public class MapaMundi {
             System.out.println(cont.getNombre());
         }
         
+    }
+    
+    public void mostrarPaisesLimitrofes(String nombrePais, MapaMundial mapa){
+          var continents = mapa.getContinentes();
+          Iterator<Continente> it = continents.iterator();
+
+          while (it.hasNext()) {
+                Continente cont = it.next();
+                var pais = cont.getPais(nombrePais);
+                if (pais != null){
+                    var limitrofes = pais.getLimitrofes();
+                    Iterator<String> iter = limitrofes.iterator();
+                    while (iter.hasNext()) {
+                           String p = iter.next();
+
+                            System.out.println(p);
+                     }
+
+                }
+
+          }
     }
     
     public void mostrarProvincias(String nombrePais, MapaMundial mapa){

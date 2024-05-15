@@ -40,12 +40,43 @@ public class MapaMundial {
         argentina.agregarProvincia("Corrientes");
         argentina.agregarProvincia("Cordoba");
         
+        argentina.agregarPaisLimitrofe("Uruguay");
+        argentina.agregarPaisLimitrofe("Brasil");
+        argentina.agregarPaisLimitrofe("Paraguay");
+        argentina.agregarPaisLimitrofe("Bolivia");
+        argentina.agregarPaisLimitrofe("Chile");
+        
         var uruguay = america.getPais("Uruguay");
         uruguay.agregarProvincia("Paysandu");
         uruguay.agregarProvincia("Salto");
         uruguay.agregarProvincia("Canelones");
         uruguay.agregarProvincia("Rocha");
         uruguay.agregarProvincia("Maldonado");   
+        
+        uruguay.agregarPaisLimitrofe("Argentina");
+        uruguay.agregarPaisLimitrofe("Brasil");
+        
+        var chile = america.getPais("Chile");
+        chile.agregarPaisLimitrofe("Argentina");
+        chile.agregarPaisLimitrofe("Peru");
+        chile.agregarPaisLimitrofe("Bolivia");
+        
+        var españa = europa.getPais("España");
+        españa.agregarPaisLimitrofe("Francia");
+        españa.agregarPaisLimitrofe("Portugal");
+        españa.agregarPaisLimitrofe("Andorra");
+        
+        var francia = europa.getPais("Francia");
+        francia.agregarPaisLimitrofe("España");
+        francia.agregarPaisLimitrofe("Andorra");
+        francia.agregarPaisLimitrofe("Italia");
+        francia.agregarPaisLimitrofe("Belgica");
+        francia.agregarPaisLimitrofe("Suiza");
+        francia.agregarPaisLimitrofe("Alemania");
+        
+        var portugal = europa.getPais("Portugal");
+        portugal.agregarPaisLimitrofe("España");
+                
     }
     
     public HashSet getContinentes(){        
