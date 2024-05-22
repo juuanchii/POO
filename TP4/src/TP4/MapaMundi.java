@@ -8,8 +8,6 @@ public class MapaMundi {
     public MapaMundi() {
     }
     
-    
-    
     public void interactuarConUsuario(MapaMundial mapa){
     Scanner scanner = new Scanner(System.in);
         
