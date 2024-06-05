@@ -25,6 +25,10 @@ public class Jugador {
     public void setNaipe_elegido(Naipe naipe_elegido) {
         this.naipe_elegido = naipe_elegido;
     }
+    
+    public void setNaipe_aleatorio(Mazo mazo){
+         this.naipe_elegido = mazo.getNaipeAleatorio();
+    }
 
     @Override
     public String toString() {

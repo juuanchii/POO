@@ -1,4 +1,4 @@
-package herencia;
+package tp6;
 
 public abstract class Figura {
 	

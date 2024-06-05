@@ -1,4 +1,4 @@
-package herencia;
+package tp6;
 
 public class Elipse extends Figura{
 	
@@ -35,8 +35,14 @@ public class Elipse extends Figura{
 
 	@Override
 	public Double area() {
-		return Math.PI * (radioMayor * radioMenor);
+                                return Math.PI * (radioMayor * radioMenor);
 	}
+        
+                    public Double perimetro() {
+                        Double suma = Math.pow(radioMayor, 2) + Math.pow(radioMenor, 2);
+                        Double raiz = Math.sqrt(suma/2);
+                        return Math.PI*2*(raiz);
+                    }
 
 	@Override
 	public String toString() {

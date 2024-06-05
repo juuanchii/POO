@@ -1,4 +1,4 @@
-package herencia;
+package tp6;
 
 public class Triangulo extends Figura{
 	
