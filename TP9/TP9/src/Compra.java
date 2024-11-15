@@ -12,6 +12,18 @@ public class Compra {
     public List<LineaDeCompra> getLineaDeCompra() {
         return listaDeCompra;
     }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public List<LineaDeCompra> getListaDeCompra() {
+        return listaDeCompra;
+    }
     
     private static AtomicInteger ID_GENERATOR = new AtomicInteger(1000);
 

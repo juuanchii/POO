@@ -3,9 +3,6 @@ public class LineaDeCompra {
     private Producto producto;
 
     public LineaDeCompra(int cantidad, Producto producto) {
-        if(cantidad < 0 || cantidad > producto.getStock()){
-            throw new IllegalArgumentException("Cantidad de productos invalidos o sin stock.");
-        }
         this.cantidad = cantidad;
         this.producto = producto;
     }
@@ -19,6 +16,9 @@ public class LineaDeCompra {
     }
 
     public void setCantidad(int cantidad) {
+        if (cantidad < 0 || cantidad > producto.getStock()) {
+            throw new IllegalArgumentException("Cantidad de productos inválida o sin stock.");
+        }
         this.cantidad = cantidad;
     }
 
@@ -28,8 +28,6 @@ public class LineaDeCompra {
     
     @Override
     public String toString() {
-        return "LineaDeCompra{" + "cantidad=" + cantidad + '}';
+        return "LineaDeCompra{" + "cantidad=" + cantidad + ", producto=" + producto + '}';
     }
-
-    
 }

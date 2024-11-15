@@ -4,14 +4,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Cliente {
     private int id;
     private String nombre;
-    private Long cuit;
+    private String cuit;
     private String email;
     private String numCelular;
     private Compra compra;
     
     private static AtomicInteger ID_GENERATOR = new AtomicInteger(1000);
 
-    public Cliente(String nombre, Long cuit, String email, String numCelular) {
+    public Cliente(String nombre, String cuit, String email, String numCelular) {
         this.id = ID_GENERATOR.getAndIncrement();
         this.nombre = nombre;
         this.cuit = cuit;
@@ -42,7 +42,7 @@ public class Cliente {
         return nombre;
     }
 
-    public Long getCuit() {
+    public String getCuit() {
         return cuit;
     }
 
@@ -62,7 +62,7 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public void setCuit(Long cuit) {
+    public void setCuit(String cuit) {
         this.cuit = cuit;
     }
 
